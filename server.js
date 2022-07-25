@@ -1,8 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
+
 var app = express();
 var vaccines = require('./vaccines-api.js');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use('/vaccines', vaccines)
 
